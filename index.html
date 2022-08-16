@@ -10,6 +10,10 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="assest/style.css" />
     <title>Monkey</title>
   </head>
@@ -25,9 +29,12 @@
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
             <div class="nav_left">
-              <p>Who we are</p>
-              <p>Cases</p>
-              <p>Contact</p>
+              <a href="menu.html">Who we are</a>
+              <a href="project.html">Project</a>
+              <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav_icon">
+              <i class="bi bi-list"></i>
             </div>
           </div>
         </div>
@@ -40,14 +47,14 @@
           <div class="row justify-content-center">
             <div class="col-lg-2">
               <div id="left">
-                <img src="assest/images/Frame.png" alt="" />
+                <img id="frame" src="assest/images/Frame.png" alt="" />
                 <p>cases</p>
               </div>
             </div>
             <div class="col-lg-7">
               <div class="center">
                 <div id="gif">
-                  <img src="assest/images/mobile.gif" alt="" />
+                  <img id="mobile_gif" src="assest/images/mobile.gif" alt="" />
                 </div>
                 <div class="icon">
                   <img src="assest/images/Vector.png" alt="" />
@@ -81,20 +88,27 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-6">
-                <div class="img_item mt-5">
-                    <a href="cars.html"><img src="assest/images/car logo 1.png" alt="" /></a>
-                    <img src="assest/images/banner 1.png" alt="" />
-                    <img src="assest/images/car logo 3.png" alt="" />
-                    <img src="assest/images/banner 2.png" alt="" />
-                </div>
+              <div class="img_item mt-5">
+                <div class="relative">
+                    <a href="project.html">
+                    <img src="assest/images/car logo 3.png" alt=""/></a>
+                    <div class="hover">
+                      <a class="rabbit" href="contact.html">Rabbit</a>
+                    </div>
+                  </div>
+
+                <img src="assest/images/banner 1.png" alt="" />
+                <img src="assest/images/car logo 3.png" alt="" />
+                <img src="assest/images/banner 2.png" alt="" />
+              </div>
             </div>
             <div class="col-lg-6 mt-5">
-             <div class="img_item">
+              <div class="img_item">
                 <img src="assest/images/banner 2.png" alt="" />
                 <img src="assest/images/car logo 3.png" alt="" />
                 <img src="assest/images/banner 2.png" alt="" />
                 <img src="assest/images/car logo 3.png" alt="" />
-             </div>
+              </div>
             </div>
           </div>
         </div>
@@ -102,42 +116,46 @@
     </main>
 
     <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="nav_img">
-                          <img src="assest/images/Group.png" alt="" />
-                        </div>
-                      </div>
-                      <div class="col-lg-3 mt-5">
-                        <div id="mail">
-                            <p>Who we are</p>
-                            <p>Cases</p>
-                            <p>Contact</p>
-                            <p class="monkey">monkeestudio © 2022</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 mt-5">
-                   <div id="end">
-                    <div class="end">
-                        <p>Contact us</p>
-                        <p>055-904-32-35</p>
-                        <p>info@monkee-studio.com</p>
-                    </div>
-
-                    <div class="icon">
-                        <img src="assest/images/Vector.png" alt="" />
-                        <img src="assest/images/Vector (1).png" alt="" />
-                        <img src="assest/images/Vector (2).png" alt="" />
-                        <img src="assest/images/Vector (3).png" alt="" />
-                        <img src="assest/images/Vector (4).png" alt="" />
-                      </div>
-                  </div>
-                   </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="nav_img">
+              <img src="assest/images/Group.png" alt="" />
             </div>
+          </div>
+          <div class="col-lg-3 mt-5">
+            <div id="mail">
+              <p>Who we are</p>
+              <p>Cases</p>
+              <p>Contact</p>
+              <p class="monkey">monkeestudio © 2022</p>
+            </div>
+          </div>
+          <div class="col-lg-3 mt-5">
+            <div id="end">
+              <div class="end">
+                <p>Contact us</p>
+                <p>055-904-32-35</p>
+                <p>info@monkee-studio.com</p>
+              </div>
+
+              <div class="icon">
+                <img src="assest/images/Vector.png" alt="" />
+                <img src="assest/images/Vector (1).png" alt="" />
+                <img src="assest/images/Vector (2).png" alt="" />
+                <img src="assest/images/Vector (3).png" alt="" />
+                <img src="assest/images/Vector (4).png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-    <script
+
+    <div id="loader">
+      <img src="assest/images/Loading (1).gif" alt="" />
+    </div>
+    <script 
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
       crossorigin="anonymous"
@@ -147,5 +165,7 @@
       integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
       crossorigin="anonymous"
     ></script>
+
+    <script src="assest/js/app.js"></script>
   </body>
 </html>
