@@ -1,0 +1,20 @@
+@mixin Flex($content, $items) {
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+}
+
+@mixin  F-direc ($col,$items,$content) {
+    display: flex;
+    flex-direction: $col;
+    align-items: $items;
+    justify-content: $content;
+}
+
+@mixin  Paraq ($f-size,$f-weight,$l-heght,$t-align) {
+    
+    font-size: $f-size;
+    font-weight: $f-weight;
+    line-height: $l-heght;
+    text-align: $t-align;
+}

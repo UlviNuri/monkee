@@ -5,8 +5,8 @@ if (burger) {
     const navmenu = document.querySelector(".nav_left");
     console.log(navmenu);
 
-    if (navmenu.style.transform === "translateY(-500px)") {
-      navmenu.style.transform == "translateX(0px)";
+    if (navmenu.style.transform === "translateX(-500px)") {
+      navmenu.style.transform = "translateX(0px)";
     } else {
       navmenu.style.transform = "translateX(-500px)";
     }

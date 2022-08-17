@@ -1,70 +1,14 @@
+@import "mixnin";
+@import "varaible";
+@import "resert";
+@import "home/home";
+
 body {
     @font-face {
         font-family: "CabinetGrotesk-Variable";
         src: url(../assest/font/CabinetGrotesk-Variable.ttf) format(opentype);
     }
     font-family: "CabinetGrotesk-Variable";
-}
-
-nav {
-    position: fixed;
-    width: 100%;
-    height: 120px;
-    background-color: black;
-    position: relative;
-    .nav_img {
-        img {
-            background-color: white;
-            margin-top: 10px;
-        }
-
-        :hover {
-            cursor: pointer;
-        }
-    }
-    .nav_icon {
-        position: absolute;
-        top: 25px;
-        right: 50px;
-        i {
-            color: rgb(255, 255, 255);
-            z-index: 5;
-            font-size: 40px;
-
-            display: none;
-        }
-        @media screen and (max-width: 500px) {
-            i {
-                display: block;
-            }
-        }
-    }
-}
-
-.nav_left {
-    height: 120px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: black;
-    a {
-        color: white;
-        display: flex;
-        align-items: center;
-        font-size: 18px;
-        text-decoration: none;
-        font-family: "CabinetGrotesk-Variable";
-        &:hover {
-            color: #f78225;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .nav_left {
-            background-color: black;
-            transform: translateX(-500px);
-        }
-    }
 }
 
 main {
@@ -78,23 +22,16 @@ main {
 
         #left {
             height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
+
+            @include F-direc(column, center, end);
             p {
-                font-size: 30px;
-                font-weight: 700;
-                line-height: 37px;
-                text-align: left;
+                @include Paraq(30px, 700, 37px, left);
             }
         }
 
         .icon {
             width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            @include Flex(space-around, center);
             padding: 15px 0;
 
             :hover {
@@ -105,10 +42,7 @@ main {
         #right {
             width: 100%;
             height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
+            @include F-direc(column, center, end);
             .right_text {
                 width: 100%;
                 h2 {
@@ -121,74 +55,59 @@ main {
                 }
             }
         }
-        @media screen and (max-width: 500px) {
-            #right {
-                display: none;
-            }
-            #left {
-                display: none;
-            }
-        }
-    }
-    .img_item {
-        img {
-            width: 100%;
-            gap: 15px;
-            padding: 15px 0;
 
-            :hover {
-                cursor: pointer;
-            }
-        }
+        #img_item {
+            img {
+                width: 100%;
+                
 
-        @media only screen and (max-width: 500px) {
-            display: none;
-        }
-
-        .relative {
-            position: relative;
-            width: 100%;
-            
-            cursor: pointer;
-            &:hover{
-                .hover{
-                    opacity: 1;
+                :hover {
+                    cursor: pointer;
                 }
             }
-            img{
-                display: block;
+
+            .relative {
+                position: relative;
                 width: 100%;
-                height: auto;
 
-            }
+                cursor: pointer;
+                &:hover {
+                    .hover {
+                        opacity: 1;
+                    }
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
 
-            .hover{
-                position: absolute;
-                top:0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                transition: .3s ease-in-out;
-                background-color: #f78225;
-                opacity: 0;
-                
-            }
+                .hover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.3s ease-in-out;
+                    background-color: #f78225;
+                    // background-color: $bg-color;
+                    opacity: 0;
+                }
 
-            .rabbit{
-                color: white;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                text-align: center;
-                font-size: 50px;
-                text-decoration: none;
-                
+                .rabbit {
+                    color: white;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    font-size: 50px;
+                    text-decoration: none;
+                }
             }
         }
-
     }
 }
 
@@ -441,23 +360,23 @@ main {
 
 // #loader
 
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: black;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.dispear {
-    animation: reload 2s forwards;
-}
-@keyframes reload {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
+// #loader {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     background: black;
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// .dispear {
+//     animation: reload 2s forwards;
+// }
+// @keyframes reload {
+//     100% {
+//         opacity: 0;
+//         visibility: hidden;
+//     }
+// }
