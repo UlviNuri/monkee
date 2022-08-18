@@ -56,60 +56,62 @@ main {
             }
         }
 
-        #img_item {
-            img {
-                width: 100%;
-                
+    }
+    #img_item {
+        img {
+            width: 100%;
+            
 
-                :hover {
-                    cursor: pointer;
+            :hover {
+                cursor: pointer;
+            }
+        }
+
+        .relative {
+            position: relative;
+            width: 100%;
+
+            cursor: pointer;
+            &:hover {
+                .hover {
+                    opacity: .4;
                 }
             }
-
-            .relative {
-                position: relative;
+            img {
+                display: block;
                 width: 100%;
+                height: auto;
+            }
 
-                cursor: pointer;
-                &:hover {
-                    .hover {
-                        opacity: 1;
-                    }
-                }
-                img {
-                    display: block;
-                    width: 100%;
-                    height: auto;
-                }
+            .hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.3s ease-in-out;
+                background-color: #f78225;
+                // background-color: $bg-color;
+                opacity: 1;
+            }
 
-                .hover {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 100%;
-                    transition: 0.3s ease-in-out;
-                    background-color: #f78225;
-                    // background-color: $bg-color;
-                    opacity: 0;
-                }
-
-                .rabbit {
-                    color: white;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    text-align: center;
-                    font-size: 50px;
-                    text-decoration: none;
-                }
+            .rabbit {
+                color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 50px;
+                text-decoration: none;
+                opacity: 1;
             }
         }
     }
 }
+
 
 footer {
     width: 100%;
@@ -164,7 +166,7 @@ footer {
     }
 }
 
-// cars css
+cars css
 
 #back {
     display: flex;
@@ -200,7 +202,7 @@ main {
     }
 }
 
-// contact
+contact
 
 main {
     #are_you {
@@ -249,11 +251,9 @@ main {
             .text_item {
                 width: 327px;
                 height: 67px;
-                background-color: black;
+                background-color: $bg-black;
                 color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include Flex (center,center);
                 font-weight: 700;
                 font-size: 25px;
             }
@@ -277,9 +277,7 @@ main {
                 height: 67px;
                 background-color: black;
                 color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include Flex(center,center);
                 font-weight: 700;
                 font-size: 25px;
             }
@@ -304,9 +302,8 @@ main {
                 height: 67px;
                 background-color: black;
                 color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+    
+                @include Flex(center,center);
                 font-weight: 700;
                 font-size: 25px;
             }
@@ -339,9 +336,8 @@ main {
 #social_icon {
     width: 100%;
     height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include Flex(center,center);
 
     img {
         padding: 0 50px;
@@ -360,23 +356,15 @@ main {
 
 // #loader
 
-// #loader {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     background: black;
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-// .dispear {
-//     animation: reload 2s forwards;
-// }
-// @keyframes reload {
-//     100% {
-//         opacity: 0;
-//         visibility: hidden;
-//     }
-// }
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

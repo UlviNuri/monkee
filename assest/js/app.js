@@ -13,9 +13,12 @@ if (burger) {
   });
 }
 
+ 
 
-var loader = document.getElementById("loader");
-window.addEventListener("load", reload);
-function reload() {
-  loader.classList.add("dispear");
-}
+var loader =document.getElementById("loader");
+window.addEventListener("load",function (){
+  loader.style.display="none";
+  this.setTimeout(function(){
+    $('#load').delay(150).fadeout("slow");
+  },30000);
+})

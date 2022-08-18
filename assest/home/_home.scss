@@ -1,4 +1,3 @@
-//  nav
 
 nav {
     width: 100%;
@@ -36,17 +35,16 @@ nav {
 
 .nav_left {
     height: 120px;
-    @include Flex(space-around,center);
+    @include Flex(space-around, center);
     background-color: black;
     a {
         color: white;
         display: flex;
         align-items: center;
         font-size: 18px;
-        
-        
+
         &:hover {
-            color: #f78225; 
+            color: #f78225;
         }
     }
 
@@ -60,108 +58,347 @@ nav {
 
 //  index.html
 
-// main {
-//     #menu {
-//         width: 100%;
-//         height: 500px;
-//         #gif {
-//             display: flex;
-//             justify-content: center;
-//         }
-
-//         #left {
-//             height: 500px;
-
-//             @include F-direc(column,center,end);
-//             p {
-//                 @include Paraq(30px,700,37px,left);
-//             }
-//         }
-
-//         .icon {
-//             width: 100%;
-//             @include Flex(space-around,center);
-//             padding: 15px 0;
-
-//             :hover {
-//                 cursor: pointer;
-//             }
-//         }
-
-//         #right {
-//             width: 100%;
-//             height: 500px;
-//             @include F-direc(column,center,end);
-//             .right_text {
-//                 width: 100%;
-//                 h2 {
-//                     font-size: 30px;
-//                     font-weight: 700;
-//                 }
-//                 p {
-//                     font-size: 20px;
-//                     font-weight: 400;
-//                 }
-//             }
-//         }
-
-//     .img_item {
-//         img {
-//             width: 100%;
-//             gap: 15px;
-//             padding: 15px 0;
-
-//             :hover {
-//                 cursor: pointer;
-//             }
-//         }
-
-
-//         .relative {
-//             position: relative;
-//             width: 100%;
+main {
+    #menu {
+        width: 100%;
+        height: 500px;
+        @media screen and (max-width:500px) {
+            #menu{
+                height: 0px !important; 
+            }
             
-//             cursor: pointer;
-//             &:hover{
-//                 .hover{
-//                     opacity: 1;
-//                 }
-//             }
-//             img{
-//                 display: block;
-//                 width: 100%;
-//                 height: auto;
+        }
+        
+        #gif {
+            display: flex;
+            justify-content: center;
+        }
 
-//             }
+        #left {
+            height: 500px;
+            display: none;
+            @include F-direc(column, center, end);
+            p {
+                @include Paraq(30px, 700, 37px, left);
+            }
 
-//             .hover{
-//                 position: absolute;
-//                 top:0;
-//                 left: 0;
-//                 right: 0;
-//                 bottom: 0;
-//                 width: 100%;
-//                 height: 100%;
-//                 transition: .3s ease-in-out;
-//                 background-color: #f78225;
-//                 // background-color: $bg-color;
-//                 opacity: 0;
-                
-//             }
+            @media screen  and (max-width:500px){
+                #left{
+                   height: 0 !important;
+                }
+                  
+              }
+        }
 
-//             .rabbit{
-//                 color: white;
-//                 position: absolute;
-//                 top: 50%;
-//                 left: 50%;
-//                 transform: translate(-50%,-50%);
-//                 text-align: center;
-//                 font-size: 50px;
-//                 text-decoration: none;
-                
-//             }
-//         }
+        .icon {
+            width: 100%;
+            @include Flex(space-around, center);
+            padding: 15px 0;
 
-//     }
-// }
-// }
+            :hover {
+                cursor: pointer;
+            }
+        }
+
+        #right {
+            width: 100%;
+            // height: 500px;
+            @include F-direc(column, center, end);
+            .right_text {
+                width: 100%;
+                h2 {
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+                p {
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+            }
+        }
+      
+
+    }
+    .img_item {
+        img {
+            width: 100%;
+            gap: 15px;
+            padding: 15px 0;
+
+            :hover {
+                cursor: pointer;
+            }
+            
+        }
+
+        .relative {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            &:hover {
+                .hover {
+                    opacity: 1;
+                }
+            }
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            .hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.3s ease-in-out;
+                background-color: #f78225;
+                opacity: 0;
+                .rabbit {
+                    color: white;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    font-size: 50px;
+                    
+                    z-index: 5;
+                }
+            }
+        }
+
+        @media screen and (max-width:500px)  {
+            .img_item{
+                margin-top: 0;
+            }
+            
+        }
+    }
+        
+    }
+
+
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: $bg-black;
+
+    .nav_img {
+        img {
+            color: white;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    }
+
+    #mail {
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            padding: 16px 0;
+
+            cursor: pointer;
+        }
+        .monkey {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            padding: 24px 0;
+        }
+    }
+
+    #end {
+        .end {
+            p {
+                font-size: 18px;
+                font-weight: 500;
+                color: white;
+                padding: 16px 0;
+                cursor: pointer;
+            }
+        }
+        .icon {
+            width: 70%;
+            gap: 16px;
+            @include Flex(space-around,center);
+            // color: white;
+            img {
+                padding: 15px 0;
+                // color: white;
+            }
+            cursor: pointer;
+        }
+    }
+    @media screen  and (max-width:500px){
+        
+     
+          
+      }
+
+}
+
+// cars 
+
+#back {
+    display: flex;
+    align-items: center;
+    img {
+        padding: 15px;
+    }
+    span {
+        @include Span(30px,400,0)
+    }
+}
+
+main {
+    #rabbit {
+        h2 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+
+    .img {
+        img {
+            width: 100%;
+            padding: 15px 0;
+        }
+    }
+}
+
+// contant 
+
+main {
+    #are_you {
+        img{
+            width: 100%;
+        }
+        .are_you {
+            h1 {
+                font-size: 60px;
+                font-weight: 700;
+            }
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+            }
+            p {
+                font-size: 20px;
+                font-weight: 400;
+                padding: 14px 0;
+            }
+          
+        }
+
+      
+
+    }
+
+    #more_than {
+        h3 {
+            font-size: 30px;
+            font-weight: 700;
+            padding: 20px;
+        }
+
+        img {
+            width: 100%;
+
+            object-fit: cover;
+        }
+    }
+
+    #what_do {
+        h3 {
+            font-size: 60px;
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .left_item {
+            .text_item {
+                width: 327px;
+                height: 67px;
+                background-color: $bg-black;
+                color: white;
+                @include Flex (center,center);
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+    }
+    #what_do1 {
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .left_item {
+            .text_item {
+                width: 170px;
+                height: 67px;
+                background-color: $bg-black;
+                color: white;
+                @include Flex(center,center);
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    #web {
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .left_item {
+            .text_item {
+                width: 170px;
+                height: 67px;
+                background-color: $bg-black;
+                color: white;
+    
+                @include Flex(center,center);
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.tel{
+    img{
+        width: 100%;
+    }
+}

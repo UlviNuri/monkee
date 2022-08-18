@@ -18,3 +18,9 @@
     line-height: $l-heght;
     text-align: $t-align;
 }
+
+@mixin  Span ($f-size,$f-weight,$margin) {
+    font-size: $f-size;
+    font-weight: $f-weight;
+    margin: $margin;
+}
