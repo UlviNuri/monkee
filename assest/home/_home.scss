@@ -1,4 +1,3 @@
-
 nav {
     width: 100%;
     height: 120px;
@@ -36,6 +35,7 @@ nav {
 .nav_left {
     height: 120px;
     @include Flex(space-around, center);
+
     background-color: black;
     a {
         color: white;
@@ -51,7 +51,7 @@ nav {
     @media screen and (max-width: 500px) {
         .nav_left {
             background-color: black;
-            transform: translateX(-500px);
+            transform: translateY(-500px);
         }
     }
 }
@@ -62,37 +62,31 @@ main {
     #menu {
         width: 100%;
         height: 500px;
-        @media screen and (max-width:500px) {
-            #menu{
-                height: 0px !important; 
-            }
-            
-        }
-        
+
         #gif {
             display: flex;
             justify-content: center;
         }
 
         #left {
-            height: 500px;
-            display: none;
+            // height: 500px;
+            
             @include F-direc(column, center, end);
             p {
                 @include Paraq(30px, 700, 37px, left);
             }
 
-            @media screen  and (max-width:500px){
-                #left{
-                   height: 0 !important;
+            @media screen and (max-width: 500px) {
+                #left {
+                    height: 0 !important;
                 }
-                  
-              }
+            }
         }
 
         .icon {
             width: 100%;
             @include Flex(space-around, center);
+
             padding: 15px 0;
 
             :hover {
@@ -102,7 +96,7 @@ main {
 
         #right {
             width: 100%;
-            // height: 500px;
+            height: 500px;
             @include F-direc(column, center, end);
             .right_text {
                 width: 100%;
@@ -116,8 +110,12 @@ main {
                 }
             }
         }
-      
 
+        @media screen and (max-width: 500px) {
+            #menu {
+                height: 0;
+            }
+        }
     }
     .img_item {
         img {
@@ -128,13 +126,13 @@ main {
             :hover {
                 cursor: pointer;
             }
-            
         }
 
         .relative {
             position: relative;
             width: 100%;
             cursor: pointer;
+
             &:hover {
                 .hover {
                     opacity: 1;
@@ -146,41 +144,26 @@ main {
                 height: auto;
             }
             .hover {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                transition: 0.3s ease-in-out;
-                background-color: #f78225;
-                opacity: 0;
+                @include Hover(absolute, 0, 0, 0, 0, 100%, 100%, 0.3s ease-in-out, #f78225, 0);
+
                 .rabbit {
-                    color: white;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    text-align: center;
-                    font-size: 50px;
-                    
-                    z-index: 5;
+
+                    @include Rabbit (white,absolute,50%,50%,translate(-50%,-50%),center,50px,5);
+                    &:hover {
+                        background-color: #f78225;
+                        opacity: 0.4;
+                    }
                 }
             }
         }
 
-        @media screen and (max-width:500px)  {
-            .img_item{
+        @media screen and (max-width: 500px) {
+            .img_item {
                 margin-top: 0;
             }
-            
         }
     }
-        
-    }
-
-
+}
 
 footer {
     width: 100%;
@@ -225,24 +208,19 @@ footer {
         .icon {
             width: 70%;
             gap: 16px;
-            @include Flex(space-around,center);
-            // color: white;
+            @include Flex(space-around, center);
+
             img {
                 padding: 15px 0;
-                // color: white;
             }
             cursor: pointer;
         }
     }
-    @media screen  and (max-width:500px){
-        
-     
-          
-      }
-
+    @media screen and (max-width: 500px) {
+    }
 }
 
-// cars 
+// cars
 
 #back {
     display: flex;
@@ -251,7 +229,7 @@ footer {
         padding: 15px;
     }
     span {
-        @include Span(30px,400,0)
+        @include Span(30px, 400, 0);
     }
 }
 
@@ -276,11 +254,11 @@ main {
     }
 }
 
-// contant 
+// contant
 
 main {
     #are_you {
-        img{
+        img {
             width: 100%;
         }
         .are_you {
@@ -297,11 +275,7 @@ main {
                 font-weight: 400;
                 padding: 14px 0;
             }
-          
         }
-
-      
-
     }
 
     #more_than {
@@ -334,7 +308,7 @@ main {
                 height: 67px;
                 background-color: $bg-black;
                 color: white;
-                @include Flex (center,center);
+                @include Flex(center, center);
                 font-weight: 700;
                 font-size: 25px;
             }
@@ -358,7 +332,7 @@ main {
                 height: 67px;
                 background-color: $bg-black;
                 color: white;
-                @include Flex(center,center);
+                @include Flex(center, center);
                 font-weight: 700;
                 font-size: 25px;
             }
@@ -383,8 +357,8 @@ main {
                 height: 67px;
                 background-color: $bg-black;
                 color: white;
-    
-                @include Flex(center,center);
+
+                @include Flex(center, center);
                 font-weight: 700;
                 font-size: 25px;
             }
@@ -397,8 +371,13 @@ main {
     }
 }
 
-.tel{
-    img{
+.tel {
+    img {
         width: 100%;
     }
+}
+
+#loader {
+    @include Flex(center, center);
+    @include Loader(fixed, 0, 0, black, 100%, 100%);
 }
