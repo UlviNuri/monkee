@@ -69,7 +69,7 @@ main {
         }
 
         #left {
-            // height: 500px;
+            height: 500px;
             
             @include F-direc(column, center, end);
             p {
